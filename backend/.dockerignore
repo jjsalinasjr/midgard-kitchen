@@ -1,0 +1,12 @@
+# The agent retrieves from Supabase pgvector at runtime — it never reads the
+# source PDF (that's only for the one-time local ingestion), so keep it out of
+# the image to stay lean.
+data/
+
+# Virtual env, caches, secrets, artifacts
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.env.*

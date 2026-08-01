@@ -1,0 +1,28 @@
+[project]
+name = "midgard-kitchen"
+version = "0.1.0"
+description = "Midgard Kitchen — Thor RAG voice agent (LiveKit agent + RAG ingestion)."
+requires-python = ">=3.11"
+dependencies = [
+    # Voice pipeline — direct provider plugins (design-plan D10/D14).
+    # We use discrete plugins (not LiveKit Inference) so provider keys are ours
+    # and the pipeline is swappable via env (settings.py).
+    "livekit-agents[deepgram,openai,cartesia,silero,turn-detector]",
+    "python-dotenv",
+
+    # RAG — LlamaIndex ingestion → Supabase pgvector (wired in Step 3).
+    "llama-index-core",
+    "llama-index-readers-file",
+    "llama-index-embeddings-openai",
+    "llama-index-vector-stores-postgres",
+    "psycopg[binary]",
+    "pgvector",
+]
+
+# NOTE: versions intentionally unpinned for the first resolve. After `uv sync`,
+# freeze the resolved versions (commit uv.lock) so the build is reproducible.
+
+[tool.uv]
+# This is an application, not a library — don't build/install the project root,
+# just manage its dependencies in the venv.
+package = false
