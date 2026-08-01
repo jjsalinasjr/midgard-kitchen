@@ -4,7 +4,7 @@ A **RAG-enabled voice agent** that tackles a real personal problem — eating we
 
 - 🔗 **Live demo:** **https://midgard-kitchen.vercel.app/**
 - 🔑 **Access rune:** a shared code gates the public demo against random traffic — provided on request.
-- 🎥 **5-min walkthrough:** _&lt;YouTube URL — added after recording&gt;_
+- 🎥 **5-min walkthrough:** **https://youtu.be/UDJmW_XgXeE**
 
 ---
 
